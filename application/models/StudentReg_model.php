@@ -16,5 +16,10 @@
 			$sql = "SELECT * FROM student_details ORDER BY id";
 			return $this->db->query($sql)->result_array();
 		}
+		public function getStudentById($id)
+		{
+			$sql = "SELECT * FROM student_details WHERE student_id = '".$id."'";
+			return $this->db->query($sql)->result_array();	
+		}
 	}
 ?>

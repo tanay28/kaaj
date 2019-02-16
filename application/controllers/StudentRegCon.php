@@ -55,13 +55,14 @@
 		}
 		private function get_last_id()
 		{
-			$last = '001';
+			$last = '01';
 			$this->load->model('StudentReg_model');
 			$rs = $this->StudentReg_model->getLastId();
 			if(isset($rs[0]['student_id']))
 			{
 				$ex = explode('R', $rs[0]['student_id']);
-				$last = $ex + 1;
+				if(isset($ex[1])) $last = intval($ex[1]) + 1;
+				$last = "0" . $last;
 			}
 			return $last;
 		}
@@ -116,8 +117,41 @@
 		}
 		public function edit_student()
 		{
+			$Arr[] = array();
+			$this->username = ($this->session->has_userdata('username')) ? $this->session->userdata('username') : '';
+			$Arr['name'] = $this->username;
+			$this->load->model('StudentReg_model');
 			$id = $this->uri->segment(3);
-			var_dump($id);
+			$rs = $this->StudentReg_model->getStudentById($id);
+			if(isset($rs) && count($rs)>0)
+			{
+				foreach ($rs as $ikey => $ivalue)
+				{
+					$Arr['student_details'] = array(
+
+						'student_id'        => $ivalue['student_id'],
+						'student_name'      => $ivalue['student_name'],
+						'age'               => $ivalue['age'],
+						'sex'               => $ivalue['sex'],
+						'father_name'       => $ivalue['father_name'],
+						'mother_name'       => $ivalue['mother_name'],
+						'father_occupation' => $ivalue['father_occupation'],
+						'mother_occupation' => $ivalue['mother_occupation'],
+						'guardian_name'     => $ivalue['guardian_name'],
+						'contact_no'        => $ivalue['contact_no'],
+						'student_address'   => $ivalue['student_address'],
+						'section'           => $ivalue['section'],
+						'registered_on'     => $ivalue['registered_on'],
+						'class'             => $ivalue['class'],
+						'admin_id'          => $ivalue['admin_id']
+					);	
+				}
+			}
+			$Arr['edit'] = 1;
+			$this->load->view('common/headerView.php',$Arr);
+			$this->load->view('common/leftSideBar.php',$Arr);
+			$this->load->view('commonadmin/student/new/createStudent.php',$Arr);
+			$this->load->view('common/footerView.php',$Arr);
 		}
 	}
 
