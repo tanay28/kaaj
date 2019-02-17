@@ -63,7 +63,7 @@
                 <div class="form-group">
                   <label for="studentName">Student Name</label>
                   <?php if(isset($student_details['student_name'])){?>
-                  <input type="text" class="form-control" id="studentName" value="<?php echo $student_details['student_name'];?>" name="txtStudentName" readonly>
+                  <input type="text" class="form-control" id="studentName" value="<?php echo $student_details['student_name'];?>" name="txtStudentName">
                   <?php }else {?>
                   <input type="text" class="form-control" id="studentName" placeholder="Enter Student Name" name="txtStudentName">
                   <?php }?>
@@ -71,17 +71,21 @@
                 <div class="form-group">
                   <label for="studentAge">Age</label>
                   <?php if(isset($student_details['age'])){?>
-                  <input type="text" class="form-control" id="studentAge" value="<?php echo $student_details['age'];?>" name="txtAge" readonly>
+                  <input type="text" class="form-control" id="studentAge" value="<?php echo $student_details['age'];?>" name="txtAge">
                   <?php }else {?>
                   <input type="text" class="form-control" id="studentAge" placeholder="Enter Student Age" name="txtAge">
                   <?php }?>
                 </div>
-                 <div class="form-group">
+                <div class="form-group">
                   <label for="studentSex">Sex</label>
                   <?php if(isset($student_details['sex'])){?>
                   <select class="form-control" id="studentSex" name="cmbSex" class="form-control">
-                    <?php if($student_details['sex'] == 'MALE')?>   <option value="MALE" selected>MALE</option>
-                    <?php if($student_details['sex'] == 'FEMALE')?> <option value="FEMALE" selected>FEMALE</option>
+                    <?php if($student_details['sex'] == 'MALE'){?>   
+                    <option value="MALE" selected>MALE</option>
+                    <?php } ?>
+                    <?php if($student_details['sex'] == 'FEMALE'){?> 
+                    <option value="FEMALE" selected>FEMALE</option>
+                    <?php } ?>
                   </select>
                   <?php }else {?>
                   <select class="form-control" id="studentSex" name="cmbSex">
@@ -94,7 +98,7 @@
                 <div class="form-group">
                   <label for="fatherName">Father's Name</label>
                   <?php if(isset($student_details['father_name'])){?>
-                  <input type="text" class="form-control" id="fatherName" value="<?php echo $student_details['father_name'];?>" name="txtFatherName" readonly>
+                  <input type="text" class="form-control" id="fatherName" value="<?php echo $student_details['father_name'];?>" name="txtFatherName">
                   <?php }else {?>
                   <input type="text" class="form-control" id="fatherName" placeholder="Enter Father's Name" name="txtFatherName">
                   <?php }?>
@@ -102,7 +106,7 @@
                 <div class="form-group">
                   <label for="motherName">Mother's Name</label>
                   <?php if(isset($student_details['mother_name'])){?>
-                  <input type="text" class="form-control" id="motherName" value="<?php echo $student_details['mother_name'];?>" name="txtMotherName" readonly>
+                  <input type="text" class="form-control" id="motherName" value="<?php echo $student_details['mother_name'];?>" name="txtMotherName">
                   <?php }else {?>
                   <input type="text" class="form-control" id="motherName" placeholder="Enter Mother's Name" name="txtMotherName">
                   <?php }?>
@@ -110,7 +114,7 @@
                 <div class="form-group">
                   <label for="fatherOccupation">Father's Occupation</label>
                   <?php if(isset($student_details['father_occupation'])){?>
-                  <input type="text" class="form-control" id="fatherOccupation" value="<?php echo $student_details['father_occupation'];?>" name="txtFatherOccupation" readonly>
+                  <input type="text" class="form-control" id="fatherOccupation" value="<?php echo $student_details['father_occupation'];?>" name="txtFatherOccupation">
                   <?php }else {?>
                   <input type="text" class="form-control" id="fatherOccupation" placeholder="Enter Father's Occcupation" name="txtFatherOccupation">
                   <?php }?>
@@ -118,7 +122,7 @@
                 <div class="form-group">
                   <label for="motherOccupation">Mother's Name</label>
                   <?php if(isset($student_details['mother_occupation'])){?>
-                  <input type="text" class="form-control" id="motherOccupation" value="<?php echo $student_details['mother_occupation'];?>" name="txtMotherOccupation" readonly>
+                  <input type="text" class="form-control" id="motherOccupation" value="<?php echo $student_details['mother_occupation'];?>" name="txtMotherOccupation">
                   <?php }else {?>
                   <input type="text" class="form-control" id="motherOccupation" placeholder="Enter Mother's Occupation" name="txtMotherOccupation">
                   <?php }?>
@@ -126,7 +130,7 @@
                 <div class="form-group">
                   <label for="GuardianName">Guardian's Name</label>
                   <?php if(isset($student_details['guardian_name'])){?>
-                  <input type="text" class="form-control" id="GurdianName" value="<?php echo $student_details['guardian_name'];?>" name="txtGuardianName" readonly>
+                  <input type="text" class="form-control" id="GurdianName" value="<?php echo $student_details['guardian_name'];?>" name="txtGuardianName">
                   <?php }else {?>
                   <input type="text" class="form-control" id="GuardianName" placeholder="Enter Guardian Name" name="txtGuardianName">
                   <?php }?>
@@ -151,20 +155,43 @@
                   <label for="cmbClass">Class</label>
                   <?php if(isset($student_details['class'])){?>
                   <select id="cmbClass" name="cmbClass" class="form-control">
-                    <?php if($student_details['class'] == 'I')?>    <option value="I" selected>I</option>
-                    <?php if($student_details['class'] == 'II')?>   <option value="II" selected>II</option>
-                    <?php if($student_details['class'] == 'III')?>  <option value="III" selected>III</option>
-                    <?php if($student_details['class'] == 'IV')?>   <option value="IV" selected>IV</option>
-                    <?php if($student_details['class'] == 'V')?>    <option value="V" selected>V</option>
-                    <?php if($student_details['class'] == 'VI')?>   <option value="VI" selected>VI</option>
-                    <?php if($student_details['class'] == 'VII')?>  <option value="VII" selected>VII</option>
-                    <?php if($student_details['class'] == 'VIII')?> <option value="VIII" selected>VIII</option>
-                    <?php if($student_details['class'] == 'IX')?>   <option value="IX" selected>IX</option>
-                    <?php if($student_details['class'] == 'X')?>    <option value="X" selected>X</option> 
-                    <?php if($student_details['class'] == 'XI')?>   <option value="XI" selected>XI</option>
-                    <?php if($student_details['class'] == 'XII')?>  <option value="XII" selected>XII</option>
+                    <?php if($student_details['class'] == 'I'){?>    
+                    <option value="I" selected>I</option>
+                    <?php } ?>
+                    <?php if($student_details['class'] == 'II'){?>
+                    <option value="II" selected>II</option>
+                    <?php } ?>
+                    <?php if($student_details['class'] == 'III'){?>  
+                    <option value="III" selected>III</option>
+                    <?php } ?>
+                    <?php if($student_details['class'] == 'IV'){?>   
+                    <option value="IV" selected>IV</option>
+                    <?php } ?>
+                    <?php if($student_details['class'] == 'V'){?>    
+                    <option value="V" selected>V</option>
+                    <?php } ?>
+                    <?php if($student_details['class'] == 'VI'){?>   
+                    <option value="VI" selected>VI</option>
+                    <?php } ?>
+                    <?php if($student_details['class'] == 'VII'){?>  
+                    <option value="VII" selected>VII</option>
+                    <?php } ?>
+                    <?php if($student_details['class'] == 'VIII'){?> 
+                    <option value="VIII" selected>VIII</option>
+                    <?php } ?>
+                    <?php if($student_details['class'] == 'IX'){?>   
+                    <option value="IX" selected>IX</option>
+                    <?php } ?>
+                    <?php if($student_details['class'] == 'X'){?>    
+                    <option value="X" selected>X</option> 
+                    <?php } ?>
+                    <?php if($student_details['class'] == 'XI'){?>   
+                    <option value="XI" selected>XI</option>
+                    <?php } ?>
+                    <?php if($student_details['class'] == 'XII'){?>  
+                    <option value="XII" selected>XII</option>
                   </select>
-                  <?php }else{?>
+                  <?php }}else{?>
                   <select id="cmbClass" name="cmbClass" class="form-control">
                     <option value="none">Select</option>
                     <option value="I">I</option>
@@ -182,16 +209,36 @@
                   </select>
                   <?php }?>
                 </div>
-                 <div class="form-group">
+
+                <div class="form-group">
                   <label for="cmbSection">Section</label>
                   <?php if(isset($student_details['section'])){?>
                   <select id="cmbSection" name="cmbSection" class="form-control">
-                    <?php if($student_details['section'] == 'A')?>  <option value="A" selected>A</option>
-                    <?php if($student_details['section'] == 'B')?>  <option value="B" selected>B</option>
-                    <?php if($student_details['section'] == 'C')?>  <option value="C" selected>C</option>
-                    <?php if($student_details['section'] == 'D')?>  <option value="D" selected>D</option>
+                    <?php if($student_details['section'] == 'A'){?>  
+                    <option value="A" selected>A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <?php } ?>
+                    <?php if($student_details['section'] == 'B'){?>  
+                      <option value="A">A</option>
+                      <option value="B" selected>B</option>
+                      <option value="C">C</option>
+                      <option value="D">D</option>
+                      <?php } ?>
+                    <?php if($student_details['section'] == 'C'){?>  
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="C" selected>C</option>
+                      <option value="D">D</option>
+                      <?php } ?>
+                    <?php if($student_details['section'] == 'D'){?>  
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="C">C</option>
+                      <option value="D" selected>D</option>
                   </select>
-                  <?php }else{?>
+                  <?php }}else{?>
                   <select id="cmbSection" name="cmbSection" class="form-control">
                     <option value="none">Select</option>
                     <option value="A">A</option>

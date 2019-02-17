@@ -144,10 +144,15 @@
 						'registered_on'     => $ivalue['registered_on'],
 						'class'             => $ivalue['class'],
 						'admin_id'          => $ivalue['admin_id']
-					);	
+					);
+					$Arr['reg_no'] = $ivalue['student_id'];
 				}
 			}
 			$Arr['edit'] = 1;
+
+			/*echo '<pre>';
+			var_dump($Arr);
+			die;*/
 			$this->load->view('common/headerView.php',$Arr);
 			$this->load->view('common/leftSideBar.php',$Arr);
 			$this->load->view('commonadmin/student/new/createStudent.php',$Arr);
