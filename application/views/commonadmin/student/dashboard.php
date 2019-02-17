@@ -55,6 +55,7 @@
         <?php echo $this->session->flashdata('del_failed'); ?>
       </div>
       <?php }?>
+      
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
