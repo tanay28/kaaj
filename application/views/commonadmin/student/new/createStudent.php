@@ -82,8 +82,10 @@
                   <select class="form-control" id="studentSex" name="cmbSex" class="form-control">
                     <?php if($student_details['sex'] == 'MALE'){?>   
                     <option value="MALE" selected>MALE</option>
+                    <option value="FEMALE">FEMALE</option>
                     <?php } ?>
-                    <?php if($student_details['sex'] == 'FEMALE'){?> 
+                    <?php if($student_details['sex'] == 'FEMALE'){?>
+                    <option value="FEMALE">FEMALE</option>
                     <option value="FEMALE" selected>FEMALE</option>
                     <?php } ?>
                   </select>
@@ -153,46 +155,165 @@
                 </div>
                 <div class="form-group">
                   <label for="cmbClass">Class</label>
+                  <select id="cmbClass" name="cmbClass" class="form-control">
                   <?php if(isset($student_details['class'])){?>
-                  <select id="cmbClass" name="cmbClass" class="form-control">
-                    <?php if($student_details['class'] == 'I'){?>    
+                    <?php if($student_details['class'] == 'I'){?>
                     <option value="I" selected>I</option>
-                    <?php } ?>
-                    <?php if($student_details['class'] == 'II'){?>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                    <option value="VI">VI</option>
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
+                    <option value="IX">IX</option>
+                    <option value="X">X</option>
+                    <option value="XI">XI</option>
+                    <option value="XII">XII</option>
+                    <?php }elseif($student_details['class'] == 'II'){?>
+                    <option value="I">I</option>
                     <option value="II" selected>II</option>
-                    <?php } ?>
-                    <?php if($student_details['class'] == 'III'){?>  
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                    <option value="VI">VI</option>
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
+                    <option value="IX">IX</option>
+                    <option value="X">X</option>
+                    <option value="XI">XI</option>
+                    <option value="XII">XII</option>    
+                    <?php }elseif($student_details['class'] == 'III'){?>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
                     <option value="III" selected>III</option>
-                    <?php } ?>
-                    <?php if($student_details['class'] == 'IV'){?>   
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                    <option value="VI">VI</option>
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
+                    <option value="IX">IX</option>
+                    <option value="X">X</option>
+                    <option value="XI">XI</option>
+                    <option value="XII">XII</option>  
+                    <?php }elseif($student_details['class'] == 'IV'){?>
+                      <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
                     <option value="IV" selected>IV</option>
-                    <?php } ?>
-                    <?php if($student_details['class'] == 'V'){?>    
+                    <option value="V">V</option>
+                    <option value="VI">VI</option>
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
+                    <option value="IX">IX</option>
+                    <option value="X">X</option>
+                    <option value="XI">XI</option>
+                    <option value="XII">XII</option>  
+                    <?php }elseif($student_details['class'] == 'V'){?>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
                     <option value="V" selected>V</option>
-                    <?php } ?>
-                    <?php if($student_details['class'] == 'VI'){?>   
+                    <option value="VI">VI</option>
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
+                    <option value="IX">IX</option>
+                    <option value="X">X</option>
+                    <option value="XI">XI</option>
+                    <option value="XII">XII</option>  
+                    <?php }elseif($student_details['class'] == 'VI'){?>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
                     <option value="VI" selected>VI</option>
-                    <?php } ?>
-                    <?php if($student_details['class'] == 'VII'){?>  
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
+                    <option value="IX">IX</option>
+                    <option value="X">X</option>
+                    <option value="XI">XI</option>
+                    <option value="XII">XII</option>  
+                    <?php }elseif($student_details['class'] == 'VII'){?>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                    <option value="VI">VI</option>
                     <option value="VII" selected>VII</option>
-                    <?php } ?>
-                    <?php if($student_details['class'] == 'VIII'){?> 
+                    <option value="VIII">VIII</option>
+                    <option value="IX">IX</option>
+                    <option value="X">X</option>
+                    <option value="XI">XI</option>
+                    <option value="XII">XII</option>  
+                    <?php }elseif($student_details['class'] == 'VIII'){?>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                    <option value="VI">VI</option>
+                    <option value="VII">VII</option>
                     <option value="VIII" selected>VIII</option>
-                    <?php } ?>
-                    <?php if($student_details['class'] == 'IX'){?>   
+                    <option value="IX">IX</option>
+                    <option value="X">X</option>
+                    <option value="XI">XI</option>
+                    <option value="XII">XII</option>  
+                    <?php }elseif($student_details['class'] == 'IX'){?>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                    <option value="VI">VI</option>
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
                     <option value="IX" selected>IX</option>
-                    <?php } ?>
-                    <?php if($student_details['class'] == 'X'){?>    
-                    <option value="X" selected>X</option> 
-                    <?php } ?>
-                    <?php if($student_details['class'] == 'XI'){?>   
+                    <option value="X">X</option>
+                    <option value="XI">XI</option>
+                    <option value="XII">XII</option>  
+                    <?php }elseif($student_details['class'] == 'X'){?>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                    <option value="VI">VI</option>
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
+                    <option value="IX">IX</option>
+                    <option value="X" selected>X</option>
+                    <option value="XI">XI</option>
+                    <option value="XII">XII</option>  
+                    <?php }elseif($student_details['class'] == 'XI'){?>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                    <option value="VI">VI</option>
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
+                    <option value="IX">IX</option>
+                    <option value="X">X</option>
                     <option value="XI" selected>XI</option>
-                    <?php } ?>
-                    <?php if($student_details['class'] == 'XII'){?>  
-                    <option value="XII" selected>XII</option>
-                  </select>
+                    <option value="XII">XII</option>  
+                    <?php }elseif($student_details['class'] == 'XII'){?>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                    <option value="VI">VI</option>
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
+                    <option value="IX">IX</option>
+                    <option value="X">X</option>
+                    <option value="XI">XI</option>
+                    <option value="XII" selected>XII</option>  
                   <?php }}else{?>
-                  <select id="cmbClass" name="cmbClass" class="form-control">
                     <option value="none">Select</option>
                     <option value="I">I</option>
                     <option value="II">II</option>
@@ -206,14 +327,14 @@
                     <option value="X">X</option>
                     <option value="XI">XI</option>
                     <option value="XII">XII</option>
-                  </select>
                   <?php }?>
+                  </select>
                 </div>
 
                 <div class="form-group">
                   <label for="cmbSection">Section</label>
-                  <?php if(isset($student_details['section'])){?>
                   <select id="cmbSection" name="cmbSection" class="form-control">
+                  <?php if(isset($student_details['section'])){?>
                     <?php if($student_details['section'] == 'A'){?>  
                     <option value="A" selected>A</option>
                     <option value="B">B</option>
@@ -226,7 +347,7 @@
                       <option value="C">C</option>
                       <option value="D">D</option>
                       <?php } ?>
-                    <?php if($student_details['section'] == 'C'){?>  
+                    <?php if($student_details['section'] == 'C'){?>
                       <option value="A">A</option>
                       <option value="B">B</option>
                       <option value="C" selected>C</option>
@@ -237,26 +358,24 @@
                       <option value="B">B</option>
                       <option value="C">C</option>
                       <option value="D" selected>D</option>
-                  </select>
                   <?php }}else{?>
-                  <select id="cmbSection" name="cmbSection" class="form-control">
                     <option value="none">Select</option>
                     <option value="A">A</option>
                     <option value="B">B</option>
                     <option value="C">C</option>
                     <option value="D">D</option>
-                  </select>
                   <?php }?>
+                  </select>
                 </div>
 
                 <div class="form-group">
                   <label>Registered On</label>
-                  <?php if(isset($school_details['registered_on'])){?>
+                  <?php if(isset($student_details['registered_on'])){?>
                   <div class="input-group date">
                     <div class="input-group-addon">
                       <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="text" class="form-control pull-right" id="datepicker" name="txtRegisteredOn" value="<?php echo $school_details['registered_on'];?>">
+                    <input type="text" class="form-control pull-right" id="datepicker" name="txtRegisteredOn" value="<?php echo $student_details['registered_on'];?>">
                   </div>
                   <?php }else{?>
                   <div class="input-group date">
@@ -267,6 +386,7 @@
                   </div>
                   <?php }?>
                 </div>
+                <input type="hidden" name="txtAdminId" value="<?php echo $student_details['admin_id'];?>">
             </div>
             <div class="box-footer">
             <?php if(isset($edit) && $edit == 1){?>

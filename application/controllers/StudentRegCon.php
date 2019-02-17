@@ -141,7 +141,7 @@
 						'contact_no'        => $ivalue['contact_no'],
 						'student_address'   => $ivalue['student_address'],
 						'section'           => $ivalue['section'],
-						'registered_on'     => $ivalue['registered_on'],
+						'registered_on'     => date('Y-m-d',strtotime($ivalue['registered_on'])),
 						'class'             => $ivalue['class'],
 						'admin_id'          => $ivalue['admin_id']
 					);
@@ -157,6 +157,61 @@
 			$this->load->view('common/leftSideBar.php',$Arr);
 			$this->load->view('commonadmin/student/new/createStudent.php',$Arr);
 			$this->load->view('common/footerView.php',$Arr);
+		}
+		public function editStudent()
+		{
+			$this->load->model('StudentReg_model');
+			$this->load->library('form_validation');
+			$this->form_validation->set_rules('txtStudentId', 'Reg No', 'required');
+			$this->form_validation->set_rules('txtStudentName', 'Student Name', 'required');
+			$this->form_validation->set_rules('txtAge', 'Age', 'required');
+			$this->form_validation->set_rules('cmbSex', 'Sex', 'required');
+			$this->form_validation->set_rules('txtFatherName', 'Father Name', 'required');
+			$this->form_validation->set_rules('txtMotherName', 'Mother Name', 'required');
+			$this->form_validation->set_rules('txtFatherOccupation', 'Father Occupation', 'required');
+			$this->form_validation->set_rules('txtMotherOccupation', 'Reg No', 'required');
+			$this->form_validation->set_rules('txtGuardianName', 'Reg No', 'required');
+			$this->form_validation->set_rules('txtContactNo', 'Reg No', 'required');
+			$this->form_validation->set_rules('txtAddress', 'Reg No', 'required');
+			$this->form_validation->set_rules('cmbSection', 'Reg No', 'required');
+			$this->form_validation->set_rules('txtRegisteredOn', 'Reg No', 'required');
+			$this->form_validation->set_rules('cmbClass', 'Reg No', 'required');
+			$this->form_validation->set_rules('txtAdminId', 'Admin Id', 'required');
+			if($this->form_validation->run())
+			{
+				$arr['data'] = array(
+					'student_name'      => $this->input->post('txtStudentName'),
+					'age'               => $this->input->post('txtAge'),
+					'sex'               => $this->input->post('cmbSex'),
+					'father_name'       => $this->input->post('txtFatherName'),
+					'mother_name'       => $this->input->post('txtMotherName'),
+					'father_occupation' => $this->input->post('txtFatherOccupation'),
+					'mother_occupation' => $this->input->post('txtMotherOccupation'),
+					'guardian_name'     => $this->input->post('txtGuardianName'),
+					'contact_no'        => $this->input->post('txtContactNo'),
+					'student_address'   => $this->input->post('txtAddress'),
+					'section'           => $this->input->post('cmbSection'),
+					'registered_on'     => $this->input->post('txtRegisteredOn'),
+					'class'             => $this->input->post('cmbClass'),
+				);
+				$arr['admin_id'] = $this->input->post('txtAdminId');
+				$arr['student_id'] = $this->input->post('txtStudentId');
+			}
+			$this->StudentReg_model->updateStudentDetails($arr);
+			$this->session->set_flashdata('updatePassSuccess','Student Successfully Updated');
+			redirect('CommonDashboardCon/dashboard');
+		}
+		public function del_student()
+		{
+			$id = $this->uri->segment(3);
+			$this->username = ($this->session->has_userdata('username')) ? $this->session->userdata('username') : '';
+			$this->load->model('StudentReg_model');
+			if(isset($id) && $id != '')
+			{
+				$this->StudentReg_model->del_student($id,$this->username);
+				$this->session->set_flashdata('updatePassSuccess','Student Successfully Deleted');
+				redirect('CommonDashboardCon/dashboard');
+			}
 		}
 	}
 
